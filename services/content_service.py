@@ -41,3 +41,19 @@ async def update_content(content_id: str, data: dict):
 async def delete_content(content_id: str):
     await content_collection.delete_one({"_id": ObjectId(content_id)})
     return True
+
+
+
+
+
+# MongoDB uses BSON format and ObjectId as primary keys. Since APIs receive IDs as strings, we convert them using bson.ObjectId for querying. CRUD operations are handled using methods like insert_one, find_one, update_one with $set for partial updates, and delete_one.”
+
+
+# BSON → MongoDB storage format
+# ObjectId → unique identifier
+# insert_one → create
+# find_one → single fetch
+# find → multiple fetch
+# update_one → update
+# delete_one → delete
+# PATCH → handled using $set
