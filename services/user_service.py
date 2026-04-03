@@ -39,3 +39,10 @@ async def update_user(user_id : str , data : dict):
 
     updated_user = await user_collection.find_one({"_id" : ObjectId(user_id)})
     return serialize_user(updated_user)
+
+
+
+async def delete_user(user_id : str):
+    deleted_user = await user_collection.find_one({"_id" : ObjectId(user_id)})
+    await user_collection.delete_one({"_id" : ObjectId(user_id)})
+    return f"user {user_id} and {deleted_user['name']} deleted successfully"

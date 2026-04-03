@@ -1,1 +1,5 @@
 pip install fastapi uvicorn pymongo motor pydantic python-dotenv
+
+
+(venv) PS C:\Users\thaku\OneDrive\Desktop\ContentManagment-FastAPI> .\venv\Scripts\activate
+(venv) PS C:\Users\thaku\OneDrive\Desktop\ContentManagment-FastAPI> uvicorn main:app --reload                             

@@ -12,6 +12,11 @@ class UserResponse(BaseModel):
     email: EmailStr
     created_at: datetime
 
+class UserUpdate(BaseModel):
+    name: str = Field(None, min_length=3, max_length=50)
+    email: EmailStr = None
+    password: str = Field(None, min_length=6)
+
 
 
 # 1. What is Pydantic?
