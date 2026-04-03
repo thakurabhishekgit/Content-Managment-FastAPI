@@ -21,6 +21,7 @@ async def create_content(data: dict):
     return serialize_content(new_content)
 
 async def get_all_contents():
+
     contents = []
     async for content in content_collection.find():
         contents.append(serialize_content(content))
